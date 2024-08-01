@@ -1,0 +1,67 @@
+<div class="d-flex justify-content-center">
+  <div class="shadow w-50 p-4">
+    <form [formGroup]="productForm">
+      @if (product) {
+        <div class="">
+          <h2>Update Product</h2>
+        </div>
+      }@else {
+        <div class="">
+          <h2 class="fw-bold fs-2" >Add Product</h2>
+        </div>
+      }
+      <div class="row mb-3">
+        <mat-label>Product Name</mat-label>
+        <mat-form-field>
+          <input matInput name="name" formControlName="name">
+        </mat-form-field>
+      </div>
+      <div class="row mb-3">
+        <mat-label>Product Details</mat-label>
+        <mat-form-field>
+          <input matInput  name="detalis" formControlName="details">
+        </mat-form-field>
+      </div>
+      <div class="row mb-3">
+        <mat-label>Brand Name</mat-label>
+        <mat-form-field>
+          <mat-select formControlName="brandId">
+            @for (item of brands; track $index) { 
+              <mat-option [value]="item.id">{{item.name}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="row mb-3">
+        <mat-label>Purchase Price</mat-label>
+        <mat-form-field>
+          <input matInput  name="purchasePrice" formControlName="purchasePrice" type="number" >
+        </mat-form-field>
+      </div>
+      <div class="row mb-3">
+        <mat-label>Sale Price</mat-label>
+        <mat-form-field>
+          <input matInput name="salePrice" formControlName="salePrice" type="number">
+        </mat-form-field>
+      </div>
+      <div class="row mb-3">
+        <mat-label>Available Quantity</mat-label>
+        <mat-form-field>
+          <input matInput name="quantity" formControlName="availableQuntity" type="number">
+        </mat-form-field>
+      </div>
+
+      @if (product) {
+        <div class="d-flex justify-content-center mt-4">
+          <button class="btn btn-primary" (click)="updateProduct()">Update</button>
+        </div>
+      }@else {
+        <div class="d-flex justify-content-center mt-4">
+          <button class="btn btn-primary" (click)="addProduct()">Add</button>
+        </div>
+      }
+     
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center">
+    <form class="shadow w-50 p-4">
+        <div class="d-flex justify-content-center mb-4 gap-2 flex-column">
+            <mat-form-field>
+                <mat-label>Brand Name</mat-label>
+                <input matInput name="name" [(ngModel)]="name">
+            </mat-form-field>
+        </div>
+        <div class="d-flex justify-content-center">
+            @if (brand) {
+                <button class="btn btn-success" (click)="updateBrand()">Update</button> 
+            }@else {
+                <button class="btn btn-success" (click)="addBrand()">Add</button>
+            }
+            
+        </div>
+    </form>
+</div>

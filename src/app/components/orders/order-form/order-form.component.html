@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+    <form class="shadow w-50 p-3" [formGroup]="orderForm"> 
+       
+        @if (order) {
+            <h5 class="text-dark fw-bold">Update Order</h5>
+        }@else {
+            <h5>Add Order</h5>
+        }
+
+        <div class="row">
+            <mat-label>Order Name</mat-label>
+            <mat-form-field>
+                <input matInput formControlName="orderNo">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-label>Product</mat-label>
+            <mat-form-field>
+                <mat-select formControlName="productId" (valueChange)="productSelected($event)">
+                    @for (item of products; track $index) {
+                        <mat-option [value]="item.id">{{item.name}} (Available Quantity:{{item.availableQuntity}})</mat-option>
+                    }
+                </mat-select>
+              </mat-form-field>
+        </div>
+
+        <div class="row">
+            <div class="w-50 d-flex flex-column">
+                <mat-label>Quantity</mat-label>
+                <mat-form-field>
+                    <input matInput type="number" formControlName="quantity">
+                </mat-form-field>
+            </div>
+            <div class="w-50 d-flex flex-column">
+                <mat-label>Sale Price</mat-label>
+                <mat-form-field>
+                    <input matInput type="number" formControlName="salePrice">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <mat-label>Discount</mat-label>
+            <mat-form-field>
+                <input matInput type="number" formControlName="discount">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-label>Total Amount</mat-label>
+            <mat-form-field>
+                <input matInput type="number" formControlName="totalAmount">
+            </mat-form-field>
+        </div>
+
+        <div class="text-center">
+            @if (order) {
+                <button  mat-raised-button (click)="updateOrder()" >Update Order</button>
+            }@else {
+                <button  mat-raised-button (click)="addOrder()">Add Order</button>
+            }
+        </div>
+          
+    </form>
+</div>
+
+
+
+

@@ -1,0 +1,63 @@
+<div class="bg-white shadow p-2">
+    <div class="d-flex justify-content-between p-2 align-item-center">
+        <h4 class="text-dark">Orders</h4>
+        <button mat-raised-button routerLink="/orders/add" color="accent">Add Order</button>
+    </div>
+    <mat-form-field class="w-100">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+    </mat-form-field>
+      
+    <table mat-table [dataSource]="dataSource" matSort>
+      
+     
+        <ng-container matColumnDef="orderNo">
+          <th mat-header-cell *matHeaderCellDef> Order Number</th>
+          <td mat-cell *matCellDef="let row"> {{row.orderNo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="productId">
+          <th mat-header-cell *matHeaderCellDef> Product Name </th>
+          <td mat-cell *matCellDef="let row"> {{getProductName(row.productId)}} </td>
+        </ng-container> 
+
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef> Quantity </th>
+          <td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="salePrice">
+          <th mat-header-cell *matHeaderCellDef>Sale Price</th>
+          <td mat-cell *matCellDef="let row"> {{row.salePrice}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="discount">
+          <th mat-header-cell *matHeaderCellDef> Discount </th>
+          <td mat-cell *matCellDef="let row"> {{row.discount}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalAmount">
+          <th mat-header-cell *matHeaderCellDef> Total Amount </th>
+          <td mat-cell *matCellDef="let row"> {{row.totalAmount}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action1">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let row"> 
+            <button class="btn btn-primary me-2" [routerLink]="'/orders/'+row.id">Edit</button>
+            <button class="btn btn-danger" (click)="cancelOrder(row)">Cancel</button>
+          </td>
+        </ng-container>
+      
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+     </table>
+
+     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" ></mat-paginator>
+      
+</div>

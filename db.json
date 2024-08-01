@@ -1,0 +1,112 @@
+{
+  "brands": [
+    {
+      "id": "1",
+      "name": "LG"
+    },
+    {
+      "id": "2",
+      "name": "Oneplus"
+    },
+    {
+      "id": "993e",
+      "name": "Lenovo"
+    },
+    {
+      "id": "2254",
+      "name": "Asus"
+    },
+    {
+      "id": "407a",
+      "name": "Apple"
+    },
+    {
+      "id": "77de",
+      "name": "Redmi"
+    },
+    {
+      "id": "ae26",
+      "name": "Realme"
+    },
+    {
+      "id": "0aa4",
+      "name": "Vivo"
+    }
+  ],
+  "orders": [
+    {
+      "orderNo": "1",
+      "productId": "316a",
+      "quantity": 2,
+      "salePrice": 100000,
+      "discount": 9000,
+      "totalAmount": 191000,
+      "id": "02d6"
+    },
+    {
+      "id": "8536",
+      "orderNo": "2",
+      "productId": "59c2",
+      "quantity": 1,
+      "salePrice": 68000,
+      "discount": 4000,
+      "totalAmount": 64000
+    },
+    {
+      "id": "c830",
+      "orderNo": "3",
+      "productId": "dd86",
+      "quantity": 2,
+      "salePrice": 45000,
+      "discount": 5000,
+      "totalAmount": 85000
+    }
+  ],
+  "products": [
+    {
+      "name": "Redmi note 10",
+      "details": "4/64",
+      "brandId": "77de",
+      "purchasePrice": 15000,
+      "salePrice": 16000,
+      "availableQuntity": 5,
+      "id": "3621"
+    },
+    {
+      "name": "Iphone 15 Pro Max",
+      "details": "8/128",
+      "brandId": "407a",
+      "purchasePrice": 90000,
+      "salePrice": 100000,
+      "availableQuntity": 4,
+      "id": "316a"
+    },
+    {
+      "id": "6354",
+      "name": "LG TV 42 inch",
+      "details": "LCD Display",
+      "brandId": "1",
+      "purchasePrice": 40000,
+      "salePrice": 45000,
+      "availableQuntity": 4
+    },
+    {
+      "id": "59c2",
+      "name": "Lenovo legion",
+      "details": "core-i7,16/512",
+      "brandId": "993e",
+      "purchasePrice": 60000,
+      "salePrice": 68000,
+      "availableQuntity": 9
+    },
+    {
+      "id": "dd86",
+      "name": "Oneplus 12r",
+      "details": "12/256",
+      "brandId": "2",
+      "purchasePrice": 40000,
+      "salePrice": 45000,
+      "availableQuntity": 2
+    }
+  ]
+}
